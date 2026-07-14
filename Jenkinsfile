@@ -26,7 +26,7 @@ pipeline {
                     // Replace placeholder with actual image tag
                     sh "sed -i 's|DOCKER_IMAGE_PLACEHOLDER|${FULL_IMAGE}|g' k8s/deployment.yaml"
                     
-                    withCredentials([file(credentialsId: 'minikube-config', variable: 'KUBECONFIG')]) {
+                    withCredentials([file(credentialsId: 'minikube-kubeconfig', variable: 'KUBECONFIG')]) {
                         sh "kubectl apply -f k8s/deployment.yaml"
                         sh "kubectl apply -f k8s/service.yaml"
                     }
