@@ -2,7 +2,7 @@ pipeline {
     agent { label 'docker-agent' }
     environment {
         IMAGE_NAME = "my-app"
-        REGISTRY = "testingacountwork"
+        REGISTRY = "richards7"
         FULL_IMAGE = "${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER}"
     }
     stages {
