@@ -14,7 +14,7 @@ pipeline {
         stage('Push') {
             steps {
                 script {
-                    docker.withRegistry('', 'dockerhub-credentials-id') {
+                    docker.withRegistry('', 'dockerhub-creds') {
                         sh "docker push ${FULL_IMAGE}"
                     }
                 }
